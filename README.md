@@ -42,5 +42,5 @@ Other optional features
 	thumbClass : 'thumb', //Change class for thumbnails
 
 ### Multiple file uploading is also taken care of
-####Just give the input field the miltiple attribute, and it will generate multiple images
-	
+####Just give the input field the miltiple attribute, and it will generate multiple image
+    <input type="file" id="input_file" name="files[]" multiple />
