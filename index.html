@@ -1,0 +1,46 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Test</title>
+        
+        <script src="onFileSelect.js"></script><!--function to respond to on file selected--> 
+        <style>
+          .thumb {
+            height: 75px;
+            border: 1px solid #000;
+            margin: 10px 5px 0 0;
+          }
+        </style>
+    </head>
+    
+    <body>
+        <input type="file" id="input_file" name="files[]" multiple />
+        <hr />
+        <output id="myImgWrap"></output>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded',function(){
+                //The lines here register the input field and bind the handle fileSelect function to it
+                var input = document.getElementById('input_file');
+                
+                /*Prepare callback function. 
+                 THIS IS OPTIONAL. 
+                 Here you can pair it with a compression algorithm like laczos if need be
+                 OR
+                 You can use this to assign the value to a hidden field
+                */
+                var thumbnailCallback = function(file, url){
+                    console.log(file);
+                    console.log(url);
+                    //Assign url to hidden field
+                }
+                
+                //Bind event to input field
+                input.addEventListener('change', function(e){
+                    thumbnail.set(e,thumbnailCallback);
+                }, false);
+            });
+        </script>
+    </body>
+</html>
